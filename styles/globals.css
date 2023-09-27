@@ -1,26 +1,53 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: rgb(105, 19, 216);
+  --primary-10: rgba(105, 19, 216, 0.1);
+  --primary-20: rgba(105, 19, 216, 0.2);
+  --primary-50: rgba(105, 19, 216, 0.5);
+  --primary-90: rgba(105, 19, 216, 0.9);
+  --black: #1a1a1a;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.pg-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-* {
-  box-sizing: border-box;
+.pg-item {
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: var(--black);
+  background: #ffffff;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+.pg-prev svg,
+.pg-next svg {
+  transform: scale(1.2);
+}
+
+.pg-prev svg:hover,
+.pg-next svg:hover {
+  color: var(--primary-90);
+  transition: all ease-in-out 0.1s;
+}
+
+.pg-item:hover {
+  color: #ffffff;
+  background: var(--primary-90);
+  transition: all ease-in-out 0.1s;
+}
+
+.pg-item:active {
+  color: #ffffff;
+  background: var(--primary-90);
+  transition: all ease-in-out 0.1s;
+}
+
+.pg-item-active {
+  background: var(--primary-90);
+  color: #ffffff;
 }
